@@ -10,7 +10,7 @@ pipeline{
         stage("Code Build"){
               when {
                      expression {
-            BRANCH_NAME == 'main' && CODE_CHANGES == true
+            BRANCH_NAME == 'main'
                      }
               }
                steps{
