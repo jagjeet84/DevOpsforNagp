@@ -17,5 +17,12 @@ pipeline{
              bat "echo UnitTest"
             }
         }
+        post{
+            always{
+            }
+            success{
+            bat "echo Success"
+            }
+        }
     }
 }
