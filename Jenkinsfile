@@ -17,6 +17,7 @@ pipeline{
              bat "echo UnitTest"
             }
         }
+    }
         post{
             always{
             }
@@ -24,5 +25,4 @@ pipeline{
             bat "echo Success"
             }
         }
-    }
 }
