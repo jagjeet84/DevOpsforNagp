@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools{
+    maven "Maven"
+    }
     stages{
         stage("Code Checkout"){
             steps{
@@ -8,18 +11,13 @@ pipeline{
             
         }
         stage("Code Build"){
-              when {
-                     expression {
-            BRANCH_NAME == 'main'
-                     }
-              }
                steps{
              bat "echo Build"
                }
         }
         stage("Unit Test"){
             steps{
-             bat "echo UnitTest"
+             bat "mvn clean"
             }
         }
     }
