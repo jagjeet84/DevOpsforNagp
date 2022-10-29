@@ -19,9 +19,6 @@ pipeline{
         }
     }
         post{
-            always{
-                //
-            }
             success{
             bat "echo Success"
             }
