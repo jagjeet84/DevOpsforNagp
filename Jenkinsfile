@@ -8,6 +8,11 @@ pipeline{
             
         }
         stage("Code Build"){
+            when{
+                expression{
+                    BRANCH_NAME -- 'main' && CODE_CHANGES -- true
+                }
+            }
                steps{
              bat "echo Build"
                }
