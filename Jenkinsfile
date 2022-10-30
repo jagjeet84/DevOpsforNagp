@@ -27,6 +27,23 @@ pipeline{
                 bat 'mvn clean package sonar:sonar'
               }
             }
+         stage("Artifact deployer") {
+            steps {
+                rtMavenDeployer{
+                    id: 'deployer',
+                     serverId: 'jagjeet@artifactory',
+                        releaseRepo: 'NagpPractice',
+                        snapshotRepo: 'NagpPractice'
+                }
+                rtMavenRun{
+                pom: 'pom.xml',
+                goals: 'clean install',
+                deployerId: 'deployer'
+                }
+                rtPublishBuildInfo{
+                    serverId: 'jagjeet@artifactory'
+                }
+            }
     }
     }
         post{
