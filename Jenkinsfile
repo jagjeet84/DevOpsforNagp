@@ -27,6 +27,7 @@ pipeline{
                 bat 'mvn clean package sonar:sonar'
               }
             }
+         }
          stage("Artifact deployer") {
             steps {
                 rtMavenDeployer (
@@ -44,7 +45,6 @@ pipeline{
                     serverId: 'jagjeet@artifactory'
                 )
              }
-         }
        }
     }
         post{
