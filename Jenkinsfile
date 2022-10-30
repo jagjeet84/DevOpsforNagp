@@ -30,7 +30,7 @@ pipeline{
          stage("Artifact deployer") {
             steps {
                 rtMavenDeployer{
-                    id: 'deployer',
+                    id: 'deployer-unique-id',
                      serverId: 'jagjeet@artifactory',
                         releaseRepo: 'NagpPractice',
                         snapshotRepo: 'NagpPractice'
