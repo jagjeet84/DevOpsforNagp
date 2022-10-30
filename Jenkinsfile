@@ -39,7 +39,7 @@ pipeline{
                 pom: 'pom.xml',
                 goals: 'clean install',
                 deployerId: 'deployer-unique-id'
-                (
+                )
                 rtPublishBuildInfo(
                     serverId: 'jagjeet@artifactory'
                 )
