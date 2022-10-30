@@ -43,7 +43,6 @@ pipeline{
                 rtPublishBuildInfo(
                     serverId: 'jagjeet@artifactory'
                 )
-            }
     }
     }
         post{
