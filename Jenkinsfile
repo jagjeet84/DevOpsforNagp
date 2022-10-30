@@ -45,11 +45,11 @@ pipeline{
                 )
              }
          }
+       }
     }
         post{
             success{
             bat "echo Success"
             }
         }
-}
 }
