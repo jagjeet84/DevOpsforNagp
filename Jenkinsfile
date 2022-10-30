@@ -29,13 +29,13 @@ pipeline{
             }
          stage("Artifact deployer") {
             steps {
-                rtMavenDeployer(
+                rtMavenDeployer (
                     id: 'deployer-unique-id',
-                     serverId: 'jagjeet@artifactory',
-                        releaseRepo: 'NagpPractice',
-                        snapshotRepo: 'NagpPractice'
+                    serverId: 'jagjeet@artifactory',
+                    releaseRepo: 'NagpPractice',
+                    snapshotRepo: 'NagpPractice'
                 )
-                rtMavenRun(
+                rtMavenRun (
                 pom: 'pom.xml',
                 goals: 'clean install',
                 deployerId: 'deployer-unique-id'
