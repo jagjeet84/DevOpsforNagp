@@ -12,12 +12,12 @@ pipeline{
         }
         stage("Code Build"){
                steps{
-             bat "echo Build"
+             bat "mvn clean install"
                }
         }
         stage("Unit Test"){
             steps{
-             bat "mvn clean install"
+             bat "mvn test"
             }
         }
          stage("Build & SonarQube analysis") {
