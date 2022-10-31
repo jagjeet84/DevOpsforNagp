@@ -17,7 +17,7 @@ pipeline{
         }
         stage("Unit Test"){
             steps{
-             bat "mvn clean"
+             bat "mvn clean install"
             }
         }
          stage("Build & SonarQube analysis") {
