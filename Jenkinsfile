@@ -24,7 +24,7 @@ pipeline{
             agent any
             steps {
               withSonarQubeEnv('SonarQube') {
-                bat "echo mvn --version"
+                bat "mvn --version"
                 bat 'mvn clean package sonar:sonar'
               }
             }
