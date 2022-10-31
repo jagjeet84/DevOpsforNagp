@@ -25,8 +25,8 @@ pipeline{
             steps {
               withSonarQubeEnv('SonarQube') {
                 bat "mvn --version"
-                //bat "mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:4.7.0.2747:sonar"
-                bat 'mvn clean package sonar:sonar'
+                bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
+                //bat 'mvn clean package sonar:sonar'
               }
             }
          }
