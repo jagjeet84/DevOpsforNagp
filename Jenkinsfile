@@ -50,12 +50,12 @@ pipeline{
        }
         stage("Build Image"){
             steps {
-                bat "docker build -t myfirstContainer:${BUILD_NUMBER} ."
+                bat "docker build -t myfirstimage:${BUILD_NUMBER} ."
             }
         }
         stage("Docker Deployment"){
             steps {
-             bat "docker run --name myfirstContainer -d -p 9050:8080 myfirstContainer:${BUILD_NUMBER}"
+             bat "docker run --name myfirstcontainer -d -p 9050:8080 myfirstimage:${BUILD_NUMBER}"
             }
         }
         
