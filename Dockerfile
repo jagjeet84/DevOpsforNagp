@@ -1,4 +1,4 @@
-FROM tomcat:10.1-alpine
+FROM tomcat:8.0-alpine
 MAINTAINER Jagjeet Chadha
 RUN apk update
 RUN apk add wget
