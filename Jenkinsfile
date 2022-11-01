@@ -35,8 +35,8 @@ pipeline{
                 rtMavenDeployer (
                     id: 'deployer-unique-id',
                     serverId: 'jagjeet@artifactory',
-                    releaseRepo: 'NagpPractice',
-                    snapshotRepo: 'NagpPractice'
+                    releaseRepo: 'devopsNagp',
+                    snapshotRepo: 'devopsNagp'
                 )
                 rtMavenRun (
                 pom: 'pom.xml',
