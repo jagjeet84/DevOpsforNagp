@@ -48,6 +48,17 @@ pipeline{
                 )
              }
        }
+        stage("Build Image"){
+            steps {
+                bat "docker build -t myfirstContainer:${BUILD_NUMBER} ."
+            }
+        }
+        stage("Docker Deployment"){
+            steps {
+             bat "docker run --name myfirstContainer -d -p 9050:8080 myfirstContainer:${BUILD_NUMBER}"
+            }
+        }
+        
     }
         post{
             success{
